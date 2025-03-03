@@ -13,7 +13,9 @@ require 'rails_helper'
       it 'returns the sum of two numbers(comma separated)' do
         expect(NumberCalculator.new.add("1,2")).to eq(3)
       end
-
+      it 'returns the sum of multiple numbers' do
+        expect(NumberCalculator.new.add("1,2,3")).to eq(6)
+      end
      
 	end
 end
