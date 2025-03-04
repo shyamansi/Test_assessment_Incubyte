@@ -1,11 +1,13 @@
 class NumberCalculator
 	def add(num)
 	return  0  if num.empty?
-	return numbers.to_i if numbers.match(/^\d+$/)
-
-    if numbers.start_with?("//")
-    delimiter, numbers = numbers[2..].split("\n", 2)
-    numbers = numbers.gsub(delimiter, ",")
+	 delimiter = ","
+    if num.start_with?("//")
+      parts = num.split("\n", 2)
+      delimiter = parts[0][2..]
+      num = parts[1]
     end
-end
+
+    num.gsub("\n", delimiter).split(delimiter).map(&:to_i).sum
+	end
 end 
