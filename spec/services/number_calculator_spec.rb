@@ -25,6 +25,10 @@ require 'rails_helper'
 		it 'returns the sum of multiple numbers(having custom delimeters) ' do
 		expect(NumberCalculator.new.add("//;\n1;2")).to eq(3)
 		end
+
+		it 'negative number not allowed' do
+		 expect { calculator.add("1,-2,3") }.to raise_error("Negative number not allowed: -2")
+		end
      
 	end
 end
