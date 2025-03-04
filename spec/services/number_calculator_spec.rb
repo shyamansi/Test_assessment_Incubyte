@@ -27,7 +27,7 @@ require 'rails_helper'
 		end
 
 		it 'negative number not allowed' do
-		 expect { calculator.add("1,-2,3") }.to raise_error("Negative number not allowed: -2")
+		 expect { NumberCalculator.new.add("1,-2,3") }.to raise_error("Negative number not allowed: -2")
 		end
      
 	end
